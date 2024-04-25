@@ -1,0 +1,17 @@
+GET http://localhost:3000/contacts/
+# gets the local database api data
+
+###
+
+GET http://localhost:3000/contacts/662ac56075b7321aa35c707e
+# gets the local api data for a single contact
+
+###
+
+GET https://project1-1xol.onrender.com/contacts
+# gets the deployed API data
+
+###
+
+GET https://project1-1xol.onrender.com/contacts/662ac56075b7321aa35c707e
+# gets the deployed API data for a single contact
