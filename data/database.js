@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 const dotenv = require("dotenv");
 dotenv.config();
-
 const MongoClient = require("mongodb").MongoClient;
 
 let database;

@@ -1,54 +1,52 @@
 # Local Host------------------------------------------------------
 
-GET http://localhost:3000/contacts/
+GET http://localhost:8000/movies
 # gets the local database api data
 
 ###
 
-GET http://localhost:3000/contacts/662ac56075b7321aa35c707e
+GET http://localhost:8000/movies/663d25149353c7ee409cfd06
 # gets the local api data for a single contact
 
 
 ###
 
 # Create Contact
-POST http://localhost:3000/contacts HTTP/1.1
+POST http://localhost:8000/movies HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Tyler",
-    "lastName": "Perkins",
-    "email": "tyler@email.com",
-    "favoriteColor": "Orange",
-    "birthday": "8/14/1998"    
+    "title": "Star Wars: The Empire Strikes Back",
+    "release_date": "May 21, 1980",
+    "genre": "sci-fi",
+    "director": "George Lucas"
 }
 
 ###
 
 # Put Contact
-PUT http://localhost:3000/contacts/662ac56075b7321aa35c707e HTTP/1.1
+PUT http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Tyler",
-    "lastName": "Perkins",
-    "email": "tyler@email.com",
-    "favoriteColor": "Orange",
-    "birthday": "8/14/1998"    
+    "title": "Star Wars: Return of the Jedi",
+    "release_date": "May 21, 1980",
+    "genre": "sci-fi",
+    "director": "George Lucas"
 }
 
 ###
 
 # Delete Contact
-DELETE http://localhost:3000/contacts/66316e0fe88d17f06399cfcf HTTP/1.1
+DELETE http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
 
 
 # Render Site ------------------------------------------------------
 ###
-GET https://project1-1xol.onrender.com/contacts
+GET https://project1-1xol.onrender.com/movies
 # gets the deployed API data
 
 ###
 
-GET https://project1-1xol.onrender.com/contacts/662ac56075b7321aa35c707e
+GET https://project1-1xol.onrender.com/movies/662ac56075b7321aa35c707e
 # gets the deployed API data for a single contact

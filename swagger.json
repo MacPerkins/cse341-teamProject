@@ -1,13 +1,14 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Contacts API",
-    "description": "Contacts API",
+    "title": "Movies API",
+    "description": "Movies API",
     "version": "1.0.0"
   },
-  "host": "project1-1xol.onrender.com",
+  "host": "localhost:8000",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
@@ -24,10 +25,20 @@
         }
       }
     },
-    "/contacts/": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/movies": {
       "get": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "produces": [
@@ -41,7 +52,7 @@
       },
       "post": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "parameters": [
@@ -51,19 +62,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
-                "lastName": {
+                "release_date": {
                   "example": "any"
                 },
-                "email": {
+                "genre": {
                   "example": "any"
                 },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
+                "director": {
                   "example": "any"
                 }
               }
@@ -80,10 +88,10 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/movies/{id}": {
       "get": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "produces": [
@@ -105,7 +113,7 @@
       },
       "put": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "parameters": [
@@ -121,19 +129,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
-                "lastName": {
+                "release_date": {
                   "example": "any"
                 },
-                "email": {
+                "genre": {
                   "example": "any"
                 },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
+                "director": {
                   "example": "any"
                 }
               }
@@ -151,7 +156,7 @@
       },
       "delete": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "parameters": [

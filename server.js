@@ -1,22 +1,22 @@
 /* eslint-disable no-undef */
 const express = require("express");
-const app = express();
 const bodyParser = require('body-parser');
 const mongodb = require("./data/database.js");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
+const app = express();
 
-app.use(bodyParser.json());
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
-  );
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  next();
-})
-app.use("/", require("./routes"));
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
+
+process.on('uncaughtException', (err, origin) => {
+  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin ${origin}`);
+});
 
 
 mongodb.initDb((err) => {
