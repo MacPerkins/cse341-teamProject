@@ -1,7 +1,7 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async (req, res) => {
+const getAll = async (req, res) => {  // GET Request
   //#swagger.tags=['Movies']
   const result = await mongodb.getDatabase().db().collection('movies').find();
   result.toArray().then((movies) => {
@@ -10,7 +10,7 @@ const getAll = async (req, res) => {
   });
 };
 
-const getSingle = async (req, res) => {
+const getSingle = async (req, res) => { // GET Request
   //#swagger.tags=['Movies']
   if(!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid movie id to get a single movie');
@@ -23,7 +23,7 @@ const getSingle = async (req, res) => {
   });
 };
 
-const createMovie = async (req, res) => {
+const createMovie = async (req, res) => { // POST Request
   //#swagger.tags=['Movies']
   const movie = {
     title: req.body.title,
@@ -39,7 +39,7 @@ const createMovie = async (req, res) => {
   }
 };
 
-const updateMovie = async (req, res) => {
+const updateMovie = async (req, res) => { // PUT Request
   //#swagger.tags=['Movies']
   if(!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid movie id to update a movie');
@@ -63,7 +63,7 @@ const updateMovie = async (req, res) => {
   }
 };
 
-const deleteMovie = async (req, res) => {
+const deleteMovie = async (req, res) => { // DELETE Request
   //#swagger.tags=['Movies']
   if(!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid movie id to delete a movie');

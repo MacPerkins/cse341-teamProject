@@ -1,9 +1,13 @@
 # Local Host------------------------------------------------------
 
+# GET all Movies
+
 GET http://localhost:8000/movies
 # gets the local database api data
 
 ###
+
+# GET a single Movie by ID
 
 GET http://localhost:8000/movies/663d25149353c7ee409cfd06
 # gets the local api data for a single contact
@@ -11,7 +15,7 @@ GET http://localhost:8000/movies/663d25149353c7ee409cfd06
 
 ###
 
-# Create Contact
+# POST or Create Movies
 POST http://localhost:8000/movies HTTP/1.1
 Content-Type: application/json
 
@@ -24,7 +28,7 @@ Content-Type: application/json
 
 ###
 
-# Put Contact
+# PUT or Update Movies by ID
 PUT http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
 Content-Type: application/json
 
@@ -37,16 +41,5 @@ Content-Type: application/json
 
 ###
 
-# Delete Contact
+# DELETE Movies by ID
 DELETE http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
-
-
-# Render Site ------------------------------------------------------
-###
-GET https://project1-1xol.onrender.com/movies
-# gets the deployed API data
-
-###
-
-GET https://project1-1xol.onrender.com/movies/662ac56075b7321aa35c707e
-# gets the deployed API data for a single contact
