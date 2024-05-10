@@ -12,6 +12,9 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   //#swagger.tags=['Movies']
+  if(!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must have a valid movie id to get a single movie');
+  }
   const movieId = new ObjectId(req.params.id);
   const result = await mongodb.getDatabase().db().collection('movies').find({ _id: movieId });
   result.toArray().then((movies) => {
