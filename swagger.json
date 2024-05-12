@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host":
-    "https://cse-341-project2-h43q.onrender.com/",
+    "cse-341-project2-h43q.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
