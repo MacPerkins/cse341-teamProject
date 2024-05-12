@@ -5,7 +5,10 @@ const doc = {
         title: 'Movies API',
         description: 'Movies API'
     },
-    host: 'localhost:8000',
+    host: [
+        'localhost:8000',
+        'https://cse-341-project2-h43q.onrender.com/'
+    ],
     schemes: ['http', 'https']
 };
 
