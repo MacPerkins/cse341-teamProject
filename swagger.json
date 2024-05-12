@@ -5,7 +5,10 @@
     "description": "Movies API",
     "version": "1.0.0"
   },
-  "host": "localhost:8000",
+  "host": [
+    "localhost:8000",
+    "https://cse-341-project2-h43q.onrender.com/"
+  ],
   "basePath": "/",
   "schemes": [
     "http",
