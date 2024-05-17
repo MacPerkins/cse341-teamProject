@@ -5,7 +5,7 @@ const doc = {
         title: 'Movies and Shows API',
         description: 'API for Movies and Premium Shows'
     },
-    host: 'localhost:8000',
+    host: 'localhost:8000', // Use this for testing OR use Render Host for deployment. 
     schemes: ['https', 'http']
 };
 
