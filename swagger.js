@@ -5,10 +5,7 @@ const doc = {
         title: 'Movies and Shows API',
         description: 'API for Movies and Premium Shows'
     },
-    host: //[
-        // 'localhost:8000',
-        'cse-341-project2-h43q.onrender.com',
-    //],
+    host: 'localhost:8000',
     schemes: ['https', 'http']
 };
 
