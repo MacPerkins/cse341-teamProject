@@ -2,12 +2,12 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'Movies API',
-        description: 'Movies API'
+        title: 'Movies and Shows API',
+        description: 'API for Movies and Premium Shows'
     },
     host: //[
         // 'localhost:8000',
-        'https://cse-341-project2-h43q.onrender.com/',
+        'cse-341-project2-h43q.onrender.com',
     //],
     schemes: ['https', 'http']
 };

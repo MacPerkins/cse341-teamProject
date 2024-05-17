@@ -18,8 +18,33 @@ const saveMovie = (req, res, next) => {
         next();
       }
     });
+};
+
+const saveShow = (req, res, next) => {
+  const validationRule = {
+    title: 'required|string',
+    year: 'required|number',
+    Director: 'required|string',
+    Rating: 'required|string',
+    Genre: 'required|string',
+    Writer: 'required|string',
+    Seasons: 'required|number',
+    IDMb_Rating: 'required|string'
   };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
   
   module.exports = {
-    saveMovie
+    saveMovie,
+    saveShow
   };
