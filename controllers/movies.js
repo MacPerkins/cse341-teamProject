@@ -1,5 +1,3 @@
-// controllers/moviesController.js
-
 const Movie = require('../models/movie'); // Ensure you have a Movie model
 
 // Get all movies
@@ -15,8 +13,8 @@ exports.getAllMovies = async (req, res) => {
 // Get a single movie
 exports.getMovieById = async (req, res) => {
   try {
-    const movie = await Movie.findById(req.params.id);
-    if (movie == null) {
+    const movie = await Movie.findOne({ movieId: req.params.movieId });
+    if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
     res.status(200).json(movie);
@@ -39,8 +37,8 @@ exports.createMovie = async (req, res) => {
 // Update a movie
 exports.updateMovie = async (req, res) => {
   try {
-    const movie = await Movie.findById(req.params.id);
-    if (movie == null) {
+    const movie = await Movie.findOne({ movieId: req.params.movieId });
+    if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
 
@@ -55,8 +53,8 @@ exports.updateMovie = async (req, res) => {
 // Delete a movie
 exports.deleteMovie = async (req, res) => {
   try {
-    const movie = await Movie.findById(req.params.id);
-    if (movie == null) {
+    const movie = await Movie.findOne({ movieId: req.params.movieId });
+    if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
 

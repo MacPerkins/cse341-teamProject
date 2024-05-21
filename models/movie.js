@@ -1,8 +1,11 @@
-// models/movie.js
-
 const mongoose = require('mongoose');
 
 const movieSchema = new mongoose.Schema({
+  movieId: {
+    type: String,
+    required: true,
+    unique: true
+  },
   title: {
     type: String,
     required: true
@@ -10,7 +13,11 @@ const movieSchema = new mongoose.Schema({
   director: String,
   genre: String,
   releaseYear: Number,
-  rating: Number
+  rating: String,
+  youtubeTrailer: String,
+  reviewRating: Number,
+  duration: String,
+  language: String
 });
 
 module.exports = mongoose.model('Movie', movieSchema);
