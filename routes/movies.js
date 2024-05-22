@@ -1,25 +1,11 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const moviesController = require('../controllers/moviesController');
 
-const moviesController = require("../controllers/movies.js");
-const validation = require('../middleware/validate.js');
-
-// GET Requests
-
-router.get("/", moviesController.getAll);
-
-router.get("/:id", moviesController.getSingle);
-
-// POST or create Request
-
-router.post('/', validation.saveMovie, moviesController.createMovie);
-
-// PUT or update Request
-
-router.put('/:id', validation.saveMovie, moviesController.updateMovie);
-
-// DELETE Request
-
-router.delete('/:id', moviesController.deleteMovie);
+router.get('/', moviesController.getAllMovies);
+router.get('/:movieId', moviesController.getMovieById);
+router.post('/', moviesController.createMovie);
+router.put('/:movieId', moviesController.updateMovie);
+router.delete('/:movieId', moviesController.deleteMovie);
 
 module.exports = router;
