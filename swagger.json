@@ -5,11 +5,11 @@
     "description": "API for Movies, Shows, Accounts, and Watch-lists",
     "version": "1.0.0"
   },
-  "host": "cse341-teamproject-txpy.onrender.com",
+  "host": "localhost:8000",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {
@@ -27,6 +27,9 @@
     },
     "/movies/": {
       "get": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -38,7 +41,51 @@
         }
       },
       "post": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "movieId": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "director": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "youtubeTrailer": {
+                  "example": "any"
+                },
+                "reviewRating": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "language": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -51,6 +98,9 @@
     },
     "/movies/{movieId}": {
       "get": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -73,13 +123,49 @@
         }
       },
       "put": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "movieId",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "movieId": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "director": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "youtubeTrailer": {
+                  "example": "any"
+                },
+                "reviewRating": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "language": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -95,6 +181,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {

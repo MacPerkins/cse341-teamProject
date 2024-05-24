@@ -28,6 +28,8 @@ const getMovieById = async (req, res) => {
 // Create a new movie
 const createMovie = async (req, res) => {
   //#swagger.tags=['Movies']
+
+  // const movie = req.body;
   const movie = {
     movieId: req.body.movieId,
     title: req.body.title,
@@ -40,8 +42,12 @@ const createMovie = async (req, res) => {
     duration: req.body.duration,
     language: req.body.language
   }
+
+  console.log(`Movie Object: ${movie}`);
   
   const newMovie = new Movie(movie);
+  console.log(`NEWMOVIE: ${newMovie}`);
+  console.log(`NEWMOVIE Stringify: ${JSON.stringify(newMovie)}`);
 
   try {
     const savedMovie = await newMovie.save();
@@ -54,7 +60,20 @@ const createMovie = async (req, res) => {
 // Update a movie
 const updateMovie = async (req, res) => {
 
-  const update = req.body;
+  // const update = req.body;
+
+  const update = {
+    movieId: req.body.movieId,
+    title: req.body.title,
+    director: req.body.director,
+    genre: req.body.genre,
+    releaseYear: req.body.releaseYear,
+    rating: req.body.rating,
+    youtubeTrailer: req.body.youtubeTrailer,
+    reviewRating: req.body.reviewRating,
+    duration: req.body.duration,
+    language: req.body.language
+  };
 
   try {
     const movie = await Movie.findById(req.params.movieId);

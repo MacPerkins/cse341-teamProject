@@ -14,10 +14,16 @@ POST http://localhost:8000/movies HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Star Wars: The Empire Strikes Back",
-    "release_date": "May 21, 1980",
-    "genre": "sci-fi",
-    "director": "George Lucas"
+    "movieId": "a1b2c3c7",
+    "title": "Inception 2",
+    "director": "Christopher Nolan",
+    "genre": "Sci-Fi",
+    "releaseYear": 2010,
+    "rating": "PG-13",
+    "youtubeTrailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "reviewRating": 5,
+    "duration": "148 minutes",
+    "language": "English"
 }
 
 ###
@@ -27,10 +33,16 @@ PUT http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Star Wars: Return of the Jedi",
-    "release_date": "May 21, 1980",
-    "genre": "sci-fi",
-    "director": "George Lucas"
+    "movieId": "a1b2c3c7",
+    "title": "Inception 3",
+    "director": "Christopher Nolan",
+    "genre": "Sci-Fi",
+    "releaseYear": 2010,
+    "rating": "PG-13",
+    "youtubeTrailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "reviewRating": 5,
+    "duration": "148 minutes",
+    "language": "English"
 }
 
 ###
