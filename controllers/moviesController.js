@@ -42,12 +42,8 @@ const createMovie = async (req, res) => {
     duration: req.body.duration,
     language: req.body.language
   }
-
-  console.log(`Movie Object: ${movie}`);
   
   const newMovie = new Movie(movie);
-  console.log(`NEWMOVIE: ${newMovie}`);
-  console.log(`NEWMOVIE Stringify: ${JSON.stringify(newMovie)}`);
 
   try {
     const savedMovie = await newMovie.save();

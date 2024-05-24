@@ -5,11 +5,11 @@
     "description": "API for Movies, Shows, Accounts, and Watch-lists",
     "version": "1.0.0"
   },
-  "host": "localhost:8000",
+  "host": "cse341-teamproject-txpy.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
