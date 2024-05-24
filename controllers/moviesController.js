@@ -28,25 +28,14 @@ const getMovieById = async (req, res) => {
 // Create a new movie
 const createMovie = async (req, res) => {
   //#swagger.tags=['Movies']
+  console.log(req.body);
+  const movie = req.body;
 
-  // const movie = req.body;
-  const movie = {
-    movieId: req.body.movieId,
-    title: req.body.title,
-    director: req.body.director,
-    genre: req.body.genre,
-    releaseYear: req.body.releaseYear,
-    rating: req.body.rating,
-    youtubeTrailer: req.body.youtubeTrailer,
-    reviewRating: req.body.reviewRating,
-    duration: req.body.duration,
-    language: req.body.language
-  }
   
   const newMovie = new Movie(movie);
 
   try {
-    const savedMovie = await newMovie.save();
+    const savedMovie = await newMovie.save(null, { select: '-__v' });
     res.status(201).json(savedMovie);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -56,31 +45,19 @@ const createMovie = async (req, res) => {
 // Update a movie
 const updateMovie = async (req, res) => {
 
-  // const update = req.body;
-
-  const update = {
-    movieId: req.body.movieId,
-    title: req.body.title,
-    director: req.body.director,
-    genre: req.body.genre,
-    releaseYear: req.body.releaseYear,
-    rating: req.body.rating,
-    youtubeTrailer: req.body.youtubeTrailer,
-    reviewRating: req.body.reviewRating,
-    duration: req.body.duration,
-    language: req.body.language
-  };
+  const update = req.body;
 
   try {
-    const movie = await Movie.findById(req.params.movieId);
+    const movie = await Movie.findById(req.params.id);
     if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
-
-    const updatedMovie = await Movie.findByIdAndUpdate(req.params.movieId, update, { new: true });
+    console.log(req.params.id);
+    const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, update, { new: true });
     
     res.status(200).json(updatedMovie);
   } catch (err) {
+    console.log(req.params.id);
     res.status(400).json({ message: err.message });
   }
 };

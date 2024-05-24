@@ -14,7 +14,7 @@ const port = process.env.PORT || 8000;
 const app = express();
 
 app
-  .use(bodyParser.urlencoded({ extended: true }))
+  .use(express.json())
   .use(
     session({
       secret: 'secret',
