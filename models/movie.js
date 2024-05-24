@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 
-const movieSchema = new mongoose.Schema(
-  {
-    movieId: { type: String, required: true },
-    title: { type: String, required: true },
-    director: { type: String, required: true },
-    genre: { type: String, required: true },
-    releaseYear: { type: Number, required: true },
-    rating: { type: String, required: true },
-    youtubeTrailer: { type: String, required: true },
-    reviewRating: { type: Number, required: true },
-    duration: { type: String, required: true },
-    language: { type: String, required: true }
+const movieSchema = new mongoose.Schema({
+  movieId: {
+    type: String,
+    unique: true
   },
+  title: {
+    type: String,
+  },
+  director: String,
+  genre: String,
+  releaseYear: Number,
+  rating: String,
+  youtubeTrailer: String,
+  reviewRating: Number,
+  duration: String,
+  language: String
+},
   { collection: 'movies' }
 );
 
