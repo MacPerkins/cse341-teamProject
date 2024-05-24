@@ -2,25 +2,16 @@ const passport = require("passport");
 
 const router = require("express").Router();
 
-// router.use('/', require('./swagger'));
+router.use('/', require('./swagger'));
 
 router.get("/", (req, res) => {
   //#swagger.tags=['Hello World']
   res.send("Hello World");
 });
 
-// router.get("/", (req, res) => {
-//   Movie.find().then(movies => {
-//       res.status(200).json(movies)
-//   }).catch(err => {
-//       res.status(500).json({message: 'an error occurred', error: err})
-//   })
-// })
+router.use('/movies', require('./movies'));   // Movies Route
 
-
-router.use('/movies', require('./movies'));
-
-// router.use('/shows', require('./shows'));
+// router.use('/shows', require('./shows'));    //Shows Route
 
 // router.get('/login', passport.authenticate('github'), (req, res) => {});
 

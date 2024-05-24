@@ -1,0 +1,41 @@
+#MOVIE COLLECTION REQUESTS ----------------------------------------
+
+GET http://localhost:8000/movies/
+# Get All Movies in the collection
+
+###
+
+GET http://localhost:8000/movies/664c1ac58e6b8788e2d588e0
+# Get a single movie
+
+###
+
+POST http://localhost:8000/movies HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Star Wars: The Empire Strikes Back",
+    "release_date": "May 21, 1980",
+    "genre": "sci-fi",
+    "director": "George Lucas"
+}
+
+###
+
+# PUT or Update Movies by ID
+PUT http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Star Wars: Return of the Jedi",
+    "release_date": "May 21, 1980",
+    "genre": "sci-fi",
+    "director": "George Lucas"
+}
+
+###
+
+# DELETE Movies by ID
+DELETE http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
+
+#SHOW COLLECTION REQUESTS ----------------------------------------
