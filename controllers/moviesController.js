@@ -2,6 +2,7 @@ const Movie = require('../models/movie'); // Ensure you have a Movie model
 
 // Get all movies
 const getAllMovies = async (req, res) => {
+  //#swagger.tags=['Movies']
   try {
     const movies = await Movie.find();
     res.status(200).json(movies);
@@ -12,6 +13,7 @@ const getAllMovies = async (req, res) => {
 
 // Get a single movie
 const getMovieById = async (req, res) => {
+  //#swagger.tags=['Movies']
   try {
     const movie = await Movie.findById(req.params.movieId);
     if (!movie) {
@@ -25,8 +27,21 @@ const getMovieById = async (req, res) => {
 
 // Create a new movie
 const createMovie = async (req, res) => {
+  //#swagger.tags=['Movies']
+  const movie = {
+    movieId: req.body.movieId,
+    title: req.body.title,
+    director: req.body.director,
+    genre: req.body.genre,
+    releaseYear: req.body.releaseYear,
+    rating: req.body.rating,
+    youtubeTrailer: req.body.youtubeTrailer,
+    reviewRating: req.body.reviewRating,
+    duration: req.body.duration,
+    language: req.body.language
+  }
   
-  const newMovie = new Movie(req.body);
+  const newMovie = new Movie(movie);
 
   try {
     const savedMovie = await newMovie.save();
