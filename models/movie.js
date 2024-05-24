@@ -3,12 +3,10 @@ const mongoose = require('mongoose');
 const movieSchema = new mongoose.Schema({
   movieId: {
     type: String,
-    required: true,
     unique: true
   },
   title: {
     type: String,
-    required: true
   },
   director: String,
   genre: String,
@@ -18,6 +16,8 @@ const movieSchema = new mongoose.Schema({
   reviewRating: Number,
   duration: String,
   language: String
-});
+},
+  { collection: 'movies' }
+);
 
 module.exports = mongoose.model('Movie', movieSchema);
