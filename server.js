@@ -13,8 +13,6 @@ dotenv.config();
 const port = process.env.PORT || 8000;
 const app = express();
 
-mongoose.set('bufferTimeoutMS', 30000);
-
 app
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
@@ -88,7 +86,8 @@ process.on('uncaughtException', (err, origin) => {
 // establish a connection to the mongo database
 mongoose.connect(process.env.MONGODB_URI, {
   connectTimeoutMS: 30000,
-  socketTimeoutMS: 30000
+  socketTimeoutMS: 30000,
+  bufferTimeoutMS: 30000
 });
 
 app.listen(port, () => {
