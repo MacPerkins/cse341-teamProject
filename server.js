@@ -13,6 +13,8 @@ dotenv.config();
 const port = process.env.PORT || 8000;
 const app = express();
 
+mongoose.set('bufferTimeoutMS', 30000);
+
 app
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
