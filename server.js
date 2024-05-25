@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const express = require('express');
-const bodyParser = require('body-parser');
+const app = express();
 const passport = require('passport');
 const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -8,10 +8,20 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require("dotenv");
 dotenv.config();
-
-
 const port = process.env.PORT || 8000;
-const app = express();
+
+// establish a connection to the mongo database
+mongoose.connect(process.env.MONGODB_URI, { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+})
+  .then(() => {
+    console.log('Successfully connected to the database');
+  })
+  .catch((err) => {
+    console.error('Error connecting to the database', err);
+    process.exit(1);
+  });;
 
 app
   .use(express.json())
@@ -82,15 +92,6 @@ process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin ${origin}`);
 });
 
-
-// establish a connection to the mongo database
-mongoose.connect(process.env.MONGODB_URI, {
-  connectTimeoutMS: 30000,
-  socketTimeoutMS: 30000
-});
-
 app.listen(port, () => {
     console.log(`Database is listening and node Running on port ${port}`);
 });
-
-
