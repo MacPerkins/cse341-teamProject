@@ -31,6 +31,9 @@
           "Movies"
         ],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -93,15 +96,18 @@
         }
       }
     },
-    "/movies/{Id}": {
+    "/movies/{id}": {
       "get": {
         "tags": [
           "Movies"
         ],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -187,7 +193,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"

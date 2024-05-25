@@ -1,4 +1,5 @@
 const Movie = require('../models/movie'); // Ensure you have a Movie model
+const mongoose = require('mongoose');
 
 // Get all movies
 const getAllMovies = async (req, res) => {
@@ -15,7 +16,15 @@ const getAllMovies = async (req, res) => {
 const getMovieById = async (req, res) => {
   //#swagger.tags=['Movies']
   try {
-    const movie = await Movie.findById(req.params.movieId);
+    // Check if the id passed in is a valid object
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      throw new Error('Invalid ID format');
+    }
+  
+    // Convert the ID to an ObjectId
+    const objectId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+    const movie = await Movie.findById(objectId);
     if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
@@ -31,7 +40,6 @@ const createMovie = async (req, res) => {
   console.log(req.body);
   const movie = req.body;
 
-  
   const newMovie = new Movie(movie);
 
   try {
@@ -46,18 +54,23 @@ const createMovie = async (req, res) => {
 const updateMovie = async (req, res) => {
 
   const update = req.body;
-
   try {
-    const movie = await Movie.findById(req.params.id);
+    // Check if the id passed in is a valid object
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      throw new Error('Invalid ID format');
+    }
+  
+    // Convert the ID to an ObjectId
+    const objectId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+    const movie = await Movie.findById(objectId);
     if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
-    console.log(req.params.id);
-    const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, update, { new: true });
+    const updatedMovie = await Movie.findByIdAndUpdate(objectId, update, { new: true });
     
     res.status(200).json(updatedMovie);
   } catch (err) {
-    console.log(req.params.id);
     res.status(400).json({ message: err.message });
   }
 };
@@ -65,15 +78,23 @@ const updateMovie = async (req, res) => {
 // Delete a movie
 const deleteMovie = async (req, res) => {
   try {
-    const movie = await Movie.findById(req.params.movieId);
+    // Check if the id passed in is a valid object
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      throw new Error('Invalid ID format');
+    }
+  
+    // Convert the ID to an ObjectId
+    const objectId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+    const movie = await Movie.findById(objectId);
     if (!movie) {
       return res.status(404).json({ message: 'Movie not found' });
     }
 
-    const deletedMovie = await Movie.findByIdAndDelete(req.params.movieId);
+    const deletedMovie = await Movie.findByIdAndDelete(objectId);
     console.log(deletedMovie);
     
-    res.status(200).json({ message: 'Deleted Movie' });
+    res.status(200).json({ message: 'The movie was deleted successfully.' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

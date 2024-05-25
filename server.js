@@ -15,6 +15,7 @@ const app = express();
 
 app
   .use(express.json())
+  .use(express.urlencoded({ extended: true }))
   .use(
     session({
       secret: 'secret',
@@ -83,7 +84,7 @@ process.on('uncaughtException', (err, origin) => {
 
 
 // establish a connection to the mongo database
-mongoose.connect(process.env.MONGODB_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
   connectTimeoutMS: 30000,
   socketTimeoutMS: 30000
 });
