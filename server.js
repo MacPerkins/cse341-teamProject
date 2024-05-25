@@ -84,7 +84,7 @@ process.on('uncaughtException', (err, origin) => {
 
 
 // establish a connection to the mongo database
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URL, {
   connectTimeoutMS: 30000,
   socketTimeoutMS: 30000,
   bufferTimeoutMS: 30000
