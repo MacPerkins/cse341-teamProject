@@ -5,11 +5,11 @@ const saveMovie = (req, res, next) => {
       title: 'required|string',
       director: 'required|string',
       genre: 'required|string',
-      releaseYear: 'required|string',
+      releaseYear: 'required|numeric',
       rating: 'required|string',
       youtubeTrailer: 'required|string',
-      reviewRating: 'required|string',
-      seasons: 'required|string'
+      reviewRating: 'required|numeric',
+      language: 'required|string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
       if (!status) {
@@ -29,11 +29,12 @@ const saveShow = (req, res, next) => {
     title: 'required|string',
     director: 'required|string',
     genre: 'required|string',
-    releaseYear: 'required|string',
+    releaseYear: 'required|numeric',
     rating: 'required|string',
     youtubeTrailer: 'required|string',
-    reviewRating: 'required|string',
-    seasons: 'required|string'
+    reviewRating: 'required|numeric',
+    seasons: 'required|numeric',
+    language: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
