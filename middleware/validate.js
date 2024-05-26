@@ -3,9 +3,13 @@ const validator = require('../helpers/validate');
 const saveMovie = (req, res, next) => {
     const validationRule = {
       title: 'required|string',
-      release_date: 'required|string',
+      director: 'required|string',
       genre: 'required|string',
-      director: 'required|string'
+      releaseYear: 'required|string',
+      rating: 'required|string',
+      youtubeTrailer: 'required|string',
+      reviewRating: 'required|string',
+      seasons: 'required|string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
       if (!status) {
@@ -23,13 +27,13 @@ const saveMovie = (req, res, next) => {
 const saveShow = (req, res, next) => {
   const validationRule = {
     title: 'required|string',
-    year: 'required|number',
-    Director: 'required|string',
-    Rating: 'required|string',
-    Genre: 'required|string',
-    Writer: 'required|string',
-    Seasons: 'required|number',
-    IDMb_Rating: 'required|string'
+    director: 'required|string',
+    genre: 'required|string',
+    releaseYear: 'required|string',
+    rating: 'required|string',
+    youtubeTrailer: 'required|string',
+    reviewRating: 'required|string',
+    seasons: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -43,7 +47,7 @@ const saveShow = (req, res, next) => {
     }
   });
 };
-  
+
   module.exports = {
     saveMovie,
     saveShow
