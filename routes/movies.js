@@ -7,13 +7,21 @@ const validation = require('../middleware/validate.js');
 router.get('/', moviesController.getAllMovies);
 router.get('/:id', moviesController.getMovieById);
 
-//POST REQUEST
-router.post('/', validation.saveMovie, moviesController.createMovie);
+// POST REQUEST
+router.post(
+    '/',
+    validation.saveMovie,
+    moviesController.createMovie
+);
 
-//PUT REQUEST
-router.put('/:id', validation.saveMovie, moviesController.updateMovie);
+// PUT REQUEST
+router.put(
+    '/:id',
+    validation.saveMovie,
+    moviesController.updateMovie
+);
 
-//DELETE REQUEST
+// DELETE REQUEST
 router.delete('/:id', moviesController.deleteMovie);
 
 module.exports = router;

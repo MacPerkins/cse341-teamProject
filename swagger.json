@@ -2,14 +2,14 @@
   "swagger": "2.0",
   "info": {
     "title": "Streaming Service API",
-    "description": "API for Movies, Shows, Accounts, and Watch-lists",
+    "description": "API for Movies, Shows, Accounts, and Watch-lists. For each of these, you can perform CRUD operations (GET, POST, PUT, and DELETE).",
     "version": "1.0.0"
   },
-  "host": "localhost:8000",
+  "host": "cse341-teamproject-txpy.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
@@ -17,7 +17,7 @@
         "tags": [
           "Hello World"
         ],
-        "description": "",
+        "description": "Go to the basic route, which displays 'Hello World'.",
         "responses": {
           "200": {
             "description": "OK"
@@ -30,7 +30,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "Get all of the movies available.",
         "produces": [
           "application/json"
         ],
@@ -47,7 +47,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "Create a new movie and add it to the database.",
         "parameters": [
           {
             "name": "body",
@@ -56,31 +56,31 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "example": "Eclipse of Time"
                 },
                 "director": {
-                  "example": "any"
+                  "example": "Samantha Greene"
                 },
                 "genre": {
-                  "example": "any"
+                  "example": "Fantasy"
                 },
                 "releaseYear": {
-                  "example": "any"
+                  "example": "2022"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": "PG-13"
                 },
                 "youtubeTrailer": {
-                  "example": "any"
+                  "example": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 },
                 "reviewRating": {
-                  "example": "any"
+                  "example": "4.5"
                 },
                 "duration": {
-                  "example": "any"
+                  "example": "135 minutes"
                 },
                 "language": {
-                  "example": "any"
+                  "example": "English"
                 }
               }
             }
@@ -101,7 +101,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "Get a single movie by passing in its id.",
         "produces": [
           "application/json"
         ],
@@ -129,7 +129,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "Update a movie by passing in its id and the data that needs to be updated.",
         "parameters": [
           {
             "name": "id",
@@ -144,31 +144,31 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "example": "Eclipse of Time and Space"
                 },
                 "director": {
-                  "example": "any"
+                  "example": "Samantha Greene"
                 },
                 "genre": {
-                  "example": "any"
+                  "example": "Fantasy"
                 },
                 "releaseYear": {
-                  "example": "any"
+                  "example": "2022"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": "PG-13"
                 },
                 "youtubeTrailer": {
-                  "example": "any"
+                  "example": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 },
                 "reviewRating": {
-                  "example": "any"
+                  "example": "5"
                 },
                 "duration": {
-                  "example": "any"
+                  "example": "135 minutes"
                 },
                 "language": {
-                  "example": "any"
+                  "example": "English"
                 }
               }
             }
@@ -190,7 +190,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "Delete a movie by passing in its id.",
         "parameters": [
           {
             "name": "id",
@@ -217,7 +217,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "",
+        "description": "Get all of the shows available.",
         "produces": [
           "application/json"
         ],
@@ -234,7 +234,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "",
+        "description": "Create a new show and add it to the database.",
         "parameters": [
           {
             "name": "body",
@@ -243,31 +243,31 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "example": "Shadow Chronicles: The Awakening"
                 },
                 "director": {
-                  "example": "any"
+                  "example": "Maya Thompson"
                 },
                 "genre": {
-                  "example": "any"
+                  "example": "Sci-Fi"
                 },
                 "releaseYear": {
-                  "example": "any"
+                  "example": "2023"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": "8.5"
                 },
                 "youtubeTrailer": {
-                  "example": "any"
+                  "example": "https://www.youtube.com/watch?v=example9"
                 },
                 "reviewRating": {
-                  "example": "any"
+                  "example": "4.7"
                 },
-                "season": {
-                  "example": "any"
+                "seasons": {
+                  "example": "2"
                 },
                 "language": {
-                  "example": "any"
+                  "example": "English"
                 }
               }
             }
@@ -288,7 +288,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "",
+        "description": "Get a single show by passing in its id.",
         "produces": [
           "application/json"
         ],
@@ -316,7 +316,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "",
+        "description": "Update a show by passing in its id and the data that needs to be updated.",
         "parameters": [
           {
             "name": "id",
@@ -331,31 +331,31 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "example": "Light Chronicles: The Awakening"
                 },
                 "director": {
-                  "example": "any"
+                  "example": "Maya Thompson"
                 },
                 "genre": {
-                  "example": "any"
+                  "example": "Sci-Fi"
                 },
                 "releaseYear": {
-                  "example": "any"
+                  "example": "2023"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": "8.5"
                 },
                 "youtubeTrailer": {
-                  "example": "any"
+                  "example": "https://www.youtube.com/watch?v=example9"
                 },
                 "reviewRating": {
-                  "example": "any"
+                  "example": "5"
                 },
                 "seasons": {
-                  "example": "any"
+                  "example": "2"
                 },
                 "language": {
-                  "example": "any"
+                  "example": "English"
                 }
               }
             }
@@ -377,7 +377,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "",
+        "description": "Delete a movie by passing in its id.",
         "parameters": [
           {
             "name": "id",
