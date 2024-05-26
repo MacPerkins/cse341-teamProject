@@ -1,0 +1,222 @@
+[
+    {
+      "title": "We Were the Lucky Ones",
+      "director": "Erica Lipez",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "9.2",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example1",
+      "reviewRating": 4.5,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "In Restless Dreams: The Music of Paul Simon",
+      "director": "Alex Gibney",
+      "genre": "Documentary",
+      "releaseYear": 2024,
+      "rating": "9.5",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example2",
+      "reviewRating": 5,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Fallout",
+      "director": "Jonathan Nolan",
+      "genre": "Sci-Fi",
+      "releaseYear": 2024,
+      "rating": "9.3",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example3",
+      "reviewRating": 4.7,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Curb Your Enthusiasm",
+      "director": "Larry David",
+      "genre": "Comedy",
+      "releaseYear": 2024,
+      "rating": "9.4",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example4",
+      "reviewRating": 4.8,
+      "seasons": 12,
+      "language": "English"
+    },
+    {
+      "title": "True Detective: Night Country",
+      "director": "Issa López",
+      "genre": "Crime",
+      "releaseYear": 2024,
+      "rating": "9.2",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example5",
+      "reviewRating": 4.6,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Elsbeth",
+      "director": "Robert King",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "9.4",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example6",
+      "reviewRating": 4.7,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Hazbin Hotel",
+      "director": "Vivienne Medrano",
+      "genre": "Animation",
+      "releaseYear": 2024,
+      "rating": "7.9",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example7",
+      "reviewRating": 4,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "The Woman in the Wall",
+      "director": "Ruth Wilson",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "7.5",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example8",
+      "reviewRating": 3.8,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Griselda",
+      "director": "Sofía Vergara",
+      "genre": "Crime",
+      "releaseYear": 2024,
+      "rating": "8.6",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example9",
+      "reviewRating": 4.3,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "In the Know",
+      "director": "Mike Judge",
+      "genre": "Comedy",
+      "releaseYear": 2024,
+      "rating": "8.7",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example10",
+      "reviewRating": 4.4,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Masters of the Air",
+      "director": "Steven Spielberg",
+      "genre": "War",
+      "releaseYear": 2024,
+      "rating": "8.6",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example11",
+      "reviewRating": 4.5,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Expats",
+      "director": "Lulu Wang",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "8.4",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example12",
+      "reviewRating": 4.2,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Feud: Capote vs. The Swans",
+      "director": "Ryan Murphy",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "7.7",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example13",
+      "reviewRating": 3.9,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "One Day",
+      "director": "Lone Scherfig",
+      "genre": "Romance",
+      "releaseYear": 2024,
+      "rating": "8.1",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example14",
+      "reviewRating": 4.1,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Mr. & Mrs. Smith",
+      "director": "Doug Liman",
+      "genre": "Action",
+      "releaseYear": 2024,
+      "rating": "8.9",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example15",
+      "reviewRating": 4.6,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Sugar",
+      "director": "Jill Soloway",
+      "genre": "Thriller",
+      "releaseYear": 2024,
+      "rating": "8.7",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example16",
+      "reviewRating": 4.5,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Mary & George",
+      "director": "Oliver Hermanus",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "8.8",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example17",
+      "reviewRating": 4.6,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "The Sympathizer",
+      "director": "Park Chan-wook",
+      "genre": "Thriller",
+      "releaseYear": 2024,
+      "rating": "8.9",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example18",
+      "reviewRating": 4.7,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Renegade Nell",
+      "director": "Sally Wainwright",
+      "genre": "Adventure",
+      "releaseYear": 2024,
+      "rating": "8.5",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example19",
+      "reviewRating": 4.3,
+      "seasons": 1,
+      "language": "English"
+    },
+    {
+      "title": "Baby Reindeer",
+      "director": "Richard Gadd",
+      "genre": "Drama",
+      "releaseYear": 2024,
+      "rating": "8.4",
+      "youtubeTrailer": "https://www.youtube.com/watch?v=example20",
+      "reviewRating": 4.2,
+      "seasons": 1,
+      "language": "English"
+    }
+  ]

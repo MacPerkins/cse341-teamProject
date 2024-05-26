@@ -1,26 +1,11 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const showsController = require('../controllers/showsController');
 
-const premiumShowsController = require("../controllers/shows.js");
-const validation = require('../middleware/validate.js');
-const { isAuthenticated } = require("../middleware/authenticate.js");
-
-// GET Requests
-
-router.get("/", premiumShowsController.getAllPremiumShows);
-
-router.get("/:id", premiumShowsController.getSinglePremiumShow);
-
-// POST or create Request
-
-router.post('/', validation.saveShow, isAuthenticated, premiumShowsController.createPremiumShow);
-
-// PUT or update Request
-
-router.put('/:id', validation.saveShow, isAuthenticated, premiumShowsController.updatePremiumShow);
-
-// DELETE Request
-
-router.delete('/:id', isAuthenticated, premiumShowsController.deletePremiumShow);
+router.get('/', showsController.getAllShows);
+router.get('/:id', showsController.getShowById);
+router.post('/', showsController.createShow);
+router.put('/:id', showsController.updateShow);
+router.delete('/:id', showsController.deleteShow);
 
 module.exports = router;
