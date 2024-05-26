@@ -1,17 +1,17 @@
-const passport = require("passport");
+const passport = require('passport');
 
-const router = require("express").Router();
+const router = require('express').Router();
 
 router.use('/', require('./swagger'));
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   //#swagger.tags=['Hello World']
-  res.send("Hello World");
+  res.send('Hello World');
 });
 
 router.use('/movies', require('./movies'));   // Movies Route
 
-// router.use('/shows', require('./shows'));    //Shows Route
+router.use('/shows', require('./shows'));    //Shows Route
 
 // router.get('/login', passport.authenticate('github'), (req, res) => {});
 
