@@ -30,7 +30,7 @@ const saveShow = (req, res, next) => {
     director: 'required|string',
     genre: 'required|string',
     releaseYear: 'required|numeric',
-    rating: 'required|string',
+    rating: 'required|numeric',
     youtubeTrailer: 'required|string',
     reviewRating: 'required|numeric',
     seasons: 'required|numeric',
