@@ -1,4 +1,4 @@
-const passport = require('passport');
+// const passport = require('passport');
 
 const router = require('express').Router();
 
@@ -9,9 +9,11 @@ router.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-router.use('/movies', require('./movies'));   // Movies Route
+router.use('/movies', require('./movies')); // Movies Route
 
-router.use('/shows', require('./shows'));    //Shows Route
+router.use('/shows', require('./shows')); //Shows Route
+
+router.use('/watch-list', require('./watch_lists'));  //Watch-Lists Route
 
 // router.get('/login', passport.authenticate('github'), (req, res) => {});
 

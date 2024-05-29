@@ -377,7 +377,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "Delete a movie by passing in its id.",
+        "description": "Delete a show by passing in its id.",
         "parameters": [
           {
             "name": "id",
@@ -392,6 +392,169 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/watch-list/": {
+      "get": {
+        "tags": [
+          "Watch-Lists"
+        ],
+        "description": "Get all of the watch_lists available.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Got all watch-lists"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Watch-Lists"
+        ],
+        "description": "Create a new watch-list and add it to the database.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "YourUsername"
+                },
+                "media_type": {
+                  "example": "Movie"
+                },
+                "title": {
+                  "example": "Star Wars IV: A New Hope"
+                },
+                "added_date": {
+                  "example": "MM/DD/YYYY"
+                },
+                "watched": {
+                  "example": "Boolean Variable (true or false)"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created Watch-List"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/watch-list/{id}": {
+      "get": {
+        "tags": [
+          "Watch-Lists"
+        ],
+        "description": "Get a single watch-list by passing in its id.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Watch-List Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Watch-Lists"
+        ],
+        "description": "Update a watch-list by passing in its id and the data that needs to be updated.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "YourUsername"
+                },
+                "media_type": {
+                  "example": "Movie"
+                },
+                "title": {
+                  "example": "Star Wars IV: A New Hope"
+                },
+                "added_date": {
+                  "example": "MM/DD/YYYY"
+                },
+                "watched": {
+                  "example": "Boolean Variable (true or false)"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Watch-List has been updated"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Watch-List Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Watch-Lists"
+        ],
+        "description": "Delete a watch-list by passing in its id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted watch-list"
+          },
+          "404": {
+            "description": "Watch-List Not Found"
           },
           "500": {
             "description": "Internal Server Error"
