@@ -49,7 +49,29 @@ const saveShow = (req, res, next) => {
   });
 };
 
+const saveList = (req, res, next) => {
+  const validationRule = {
+    username: 'required|string',
+    media_type: 'required|string',
+    title: 'required|string',
+    added_date: 'required|string',
+    watched: 'required|boolean',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Watch-List Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
   module.exports = {
     saveMovie,
-    saveShow
+    saveShow,
+    saveList
   };
