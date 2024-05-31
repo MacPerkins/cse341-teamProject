@@ -9,11 +9,21 @@ router.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-router.use('/movies', require('./movies')); // Movies Route
+//Movies Route
 
-router.use('/shows', require('./shows')); //Shows Route
+router.use('/movies', require('./movies'));
 
-router.use('/watch-list', require('./watch_lists'));  //Watch-Lists Route
+//Shows Route
+
+router.use('/shows', require('./shows'));
+
+//Watch-Lists Route
+
+router.use('/watch-list', require('./watch_lists'));
+
+//Accounts Route
+
+router.use('/accounts', require('./accounts'));
 
 // router.get('/login', passport.authenticate('github'), (req, res) => {});
 
