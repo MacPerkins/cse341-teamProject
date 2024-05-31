@@ -1,4 +1,4 @@
-const { Types: { ObjectId } } = require('mongoose') ;
+const { Types: { ObjectId } } = require('mongoose');
 const mockingoose = require('mockingoose');
 
 const { getWatchListById } = require('../controllers/watch_lists');
@@ -20,8 +20,9 @@ describe('WatchLists routes', () => {
         };
 
 
+
         const res = new TestResponse();
-        console.log(res);
+
 
         try {
             await getWatchListById(req, res);
@@ -29,6 +30,7 @@ describe('WatchLists routes', () => {
             console.error(error);
         }
 
+        console.log(res.statusCode);
         console.log(res.data);
 
         expect(res.statusCode).toBe(200);
