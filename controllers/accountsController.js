@@ -26,15 +26,14 @@ const getAccountById = async (req, res) => {
 
 // Function to create a new account
 const createAccount = async (req, res) => {
-  const account = new Account({
-    username: req.body.username,
-    email: req.body.email,
-    // other account fields
-  });
+  console.log(req.body);
+  const account = req.body;
+
+  const newAccount = new Account(account);
 
   try {
-    const newAccount = await account.save();
-    res.status(201).json(newAccount);
+    const savedAccount = await newAccount.save(null, { select: '-__v' });
+    res.status(201).json(savedAccount);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
