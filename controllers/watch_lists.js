@@ -89,7 +89,7 @@ const deleteWatchList = async (req, res) => {
 
     const watch_list = await WatchList.findById(objectId);
     if (!watch_list) {
-      return res.status(404).json({ message: 'Movie not found' });
+      return res.status(404).json({ message: 'Watch-list not found' });
     }
 
     const deletedWatchList = await WatchList.findByIdAndDelete(objectId);

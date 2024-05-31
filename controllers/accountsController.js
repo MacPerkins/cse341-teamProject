@@ -65,12 +65,22 @@ const updateAccount = async (req, res) => {
 // Function to delete an account
 const deleteAccount = async (req, res) => {
   try {
-    const account = await Account.findById(req.params.id);
-    if (account == null) {
-      return res.status(404).json({ message: 'Cannot find account' });
+
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      throw new Error('Invalid ID format');
     }
 
-    await account.remove();
+    const objectId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+    const account = await Account.findById(objectId);
+
+    if (!account) {
+      return res.status(404).json({ message: 'Account not found' });
+    }
+
+    const deletedAccount = await Account.findByIdAndDelete(objectId);
+    console.log(deletedAccount);
+
     res.status(200).json({ message: 'Deleted account' });
   } catch (error) {
     res.status(500).json({ message: error.message });
