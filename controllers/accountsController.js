@@ -1,5 +1,6 @@
 const Account = require('../models/account'); // Import the Account model
 const passport = require('passport'); // Import Passport for OAuth
+const mongoose = require('mongoose');
 
 // Function to get all accounts
 const getAllAccounts = async (req, res) => {
