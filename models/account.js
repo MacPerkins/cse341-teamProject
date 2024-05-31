@@ -20,6 +20,8 @@ const accountSchema = new Schema({
         type: String,
         required: true
       }
-}, { timestamps: true });
+},
+  { collection: 'accounts' }
+);
 
 module.exports = mongoose.model('Account', accountSchema);
