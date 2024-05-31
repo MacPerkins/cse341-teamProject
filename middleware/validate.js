@@ -70,8 +70,29 @@ const saveList = (req, res, next) => {
   });
 };
 
+const saveAccount = (req, res, next) => {
+  const validationRule = {
+    firstName: 'required|string',
+    lastName: 'required|string',
+    email: 'required|string',
+    password: 'required|string',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Account Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
   module.exports = {
     saveMovie,
     saveShow,
-    saveList
+    saveList,
+    saveAccount
   };

@@ -15,6 +15,10 @@ const getAllAccounts = async (req, res) => {
 // Function to get a single account by ID
 const getAccountById = async (req, res) => {
   try {
+
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      throw new Error('Invalid ID format');
+    }
     const account = await Account.findById(req.params.id);
     if (account == null) {
       return res.status(404).json({ message: 'Cannot find account' });
