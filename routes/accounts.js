@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const accountsController = require('../controllers/accountsController');
 const validation = require('../middleware/validate.js');
 const authenticate = require('../middleware/authenticate.js');
