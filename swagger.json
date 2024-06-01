@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Streaming Service API",
-    "description": "API for Movies, Shows, Accounts, and Watch-lists. For each of these, you can perform CRUD operations (GET, POST, PUT, and DELETE).",
+    "description": "API for Movies, Shows, Accounts, and Watch-lists. For each of these, you can perform CRUD operations (GET, POST, PUT, and DELETE).\n\nFollow this path to sign up or log in using GitHub (OAuth): https://cse341-teamproject-txpy.onrender.com/auth/github\n\nFollow this path to logout: https://cse341-teamproject-txpy.onrender.com/auth/logout",
     "version": "1.0.0"
   },
   "host": "cse341-teamproject-txpy.onrender.com",
@@ -567,7 +567,7 @@
         "tags": [
           "Accounts"
         ],
-        "description": "Get all of the accounts available.",
+        "description": "Get account of the user currently logged in. Requires authentication.",
         "produces": [
           "application/json"
         ],
@@ -592,17 +592,18 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "John"
+                "fullName": {
+                  "example": "John Doe"
                 },
-                "lastName": {
-                  "example": "Doe"
+                "username": {
+                  "example": "johndoe"
                 },
                 "email": {
-                  "example": "example@gmail.com"
+                  "example": "john.doe@gmail.com"
                 },
-                "password": {
-                  "example": "mypassword1234"
+                "githubId": {
+                  "example": "77976534",
+                  "type": "string"
                 }
               }
             }
@@ -618,43 +619,15 @@
         }
       }
     },
-    "/accounts/{id}": {
-      "get": {
-        "tags": [
-          "Accounts"
-        ],
-        "description": "Get a single account by passing in its id.",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
+    "/accounts/{githubId}": {
       "put": {
         "tags": [
           "Accounts"
         ],
-        "description": "Update an account by passing in its id and the data that needs to be updated.",
+        "description": "Update an account by passing in its githubId and the data that needs to be updated.",
         "parameters": [
           {
-            "name": "id",
+            "name": "githubId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -665,17 +638,18 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "John"
+                "fullName": {
+                  "example": "Jane Doe"
                 },
-                "lastName": {
-                  "example": "Doe"
+                "username": {
+                  "example": "janedoe"
                 },
                 "email": {
-                  "example": "example@gmail.com"
+                  "example": "jane.doe@gmail.com"
                 },
-                "password": {
-                  "example": "mypassword1234"
+                "githubId": {
+                  "example": "77976534",
+                  "type": "string"
                 }
               }
             }
@@ -697,10 +671,10 @@
         "tags": [
           "Accounts"
         ],
-        "description": "Delete an account by passing in its id.",
+        "description": "Delete an account by passing in its githubId.",
         "parameters": [
           {
-            "name": "id",
+            "name": "githubId",
             "in": "path",
             "required": true,
             "type": "string"

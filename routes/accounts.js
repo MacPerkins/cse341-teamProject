@@ -1,29 +1,38 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const accountsController = require('../controllers/accountsController');
-
-// Route to get all accounts
-router.get('/', accountsController.getAllAccounts);
+const validation = require('../middleware/validate.js');
+const authenticate = require('../middleware/authenticate.js');
 
 // Route to get an account by ID
-router.get('/:id', accountsController.getAccountById);
+router.get(
+    '/',
+    authenticate.checkAuth,
+    accountsController.getAccountById
+);
 
 // Route to create a new account
-router.post('/', accountsController.createAccount);
+router.post(
+    '/',
+    authenticate.checkAuth,
+    validation.saveAccount,
+    accountsController.createAccount
+);
 
 // Route to update an account
-router.put('/:id', accountsController.updateAccount);
+router.put(
+    '/:githubId', 
+    authenticate.checkAuth,
+    validation.saveAccount,
+    accountsController.updateAccount
+);
 
 // Route to delete an account
-router.delete('/:id', accountsController.deleteAccount);
-
-// OAuth routes
-router.get('/auth/github', accountsController.oauthLogin);
-router.get('/auth/github/callback', accountsController.oauthCallback);
-
-/* 
-// JWT login route (commented out)
-router.post('/login', accountsController.login);
-*/
+router.delete(
+    '/:githubId',
+    authenticate.checkAuth,
+    accountsController.deleteAccount
+);
 
 module.exports = router;

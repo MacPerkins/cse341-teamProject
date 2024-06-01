@@ -72,10 +72,10 @@ const saveList = (req, res, next) => {
 
 const saveAccount = (req, res, next) => {
   const validationRule = {
-    firstName: 'required|string',
-    lastName: 'required|string',
-    email: 'required|string',
-    password: 'required|string',
+    fullName: 'required|string',
+    username: 'required|string',
+    email: 'required|email',
+    githubId: 'required|string',
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

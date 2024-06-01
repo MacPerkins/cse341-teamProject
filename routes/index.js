@@ -1,37 +1,40 @@
-// const passport = require('passport');
-
+const passport = require('passport');
 const router = require('express').Router();
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+    done(null, obj);
+});
 
 router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
   //#swagger.tags=['Hello World']
-  res.send('Hello World');
+  const message = req.user ? `Hello, ${req.user.fullName}` : 'Hello, please log in';
+  res.send(message);
 });
 
-//Movies Route
-
+// Movies Route
 router.use('/movies', require('./movies'));
 
-//Shows Route
-
+// Shows Route
 router.use('/shows', require('./shows'));
 
-//Watch-Lists Route
-
+// Watch-Lists Route
 router.use('/watch-list', require('./watch_lists'));
 
-//Accounts Route
-
+// Accounts Route
 router.use('/accounts', require('./accounts'));
 
-// router.get('/login', passport.authenticate('github'), (req, res) => {});
+// Authorization Route
+router.use('/auth', require('./auth'));
 
-// router.get('/logout', function(req, res, next) {
-//   req.logOut(function(err) {
-//     if (err) { return next(err); }
-//     res.redirect('/');
-//   });
-// });
+
 
 module.exports = router;
