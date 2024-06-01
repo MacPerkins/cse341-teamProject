@@ -35,6 +35,4 @@ router.use('/accounts', require('./accounts'));
 // Authorization Route
 router.use('/auth', require('./auth'));
 
-
-
 module.exports = router;
