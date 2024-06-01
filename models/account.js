@@ -2,20 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const accountSchema = new Schema({
-    firstName: {
-        type: String,
-      },
-      lastName: {
-        type: String,
-      },
-      email: {
-        type: String,
-        required: true,
-        
-      },
-      password: {
-        type: String,
-      }
+    fullName: {
+      type: String,
+    },
+    username: {
+      type: String,
+    },
+    email: {
+      type: String,
+    },
+    githubId: {
+      type: String,
+      unique: true,
+    }
 },
   { collection: 'accounts' }
 );
