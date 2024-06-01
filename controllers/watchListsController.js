@@ -1,4 +1,4 @@
-const WatchList = require('../models/watch_lists'); // Ensure you have a Movie model
+const WatchList = require('../models/watch_lists'); // Ensure you have a WatchList model
 const mongoose = require('mongoose');
 
 // Get all Watch Lists
@@ -26,7 +26,7 @@ const getWatchListById = async (req, res) => {
 
     const watch_list = await WatchList.findById(objectId);
     if (!watch_list) {
-      return res.status(404).json({ message: 'Movie not found' });
+      return res.status(404).json({ message: 'WatchList not found' });
     }
     res.status(200).json(watch_list);
   } catch (err) {
@@ -65,7 +65,7 @@ const updateWatchList = async (req, res) => {
 
     const watch_list = await WatchList.findById(objectId);
     if (!watch_list) {
-      return res.status(404).json({ message: 'Movie not found' });
+      return res.status(404).json({ message: 'WatchList not found' });
     }
     const updatedWatchList = await WatchList.findByIdAndUpdate(objectId, update, { new: true });
     
