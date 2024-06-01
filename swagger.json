@@ -47,7 +47,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "Create a new movie and add it to the database.",
+        "description": "Create a new movie and add it to the database. Requires authentication.",
         "parameters": [
           {
             "name": "body",
@@ -129,7 +129,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "Update a movie by passing in its id and the data that needs to be updated.",
+        "description": "Update a movie by passing in its id and the data that needs to be updated. Requires authentication.",
         "parameters": [
           {
             "name": "id",
@@ -234,7 +234,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "Create a new show and add it to the database.",
+        "description": "Create a new show and add it to the database. Requires authentication.",
         "parameters": [
           {
             "name": "body",
@@ -316,7 +316,7 @@
         "tags": [
           "Shows"
         ],
-        "description": "Update a show by passing in its id and the data that needs to be updated.",
+        "description": "Update a show by passing in its id and the data that needs to be updated. Requires authentication.",
         "parameters": [
           {
             "name": "id",
@@ -421,7 +421,7 @@
         "tags": [
           "Watch-Lists"
         ],
-        "description": "Create a new watch-list and add it to the database.",
+        "description": "Create a new watch-list and add it to the database. Requires authentication.",
         "parameters": [
           {
             "name": "body",
@@ -491,7 +491,7 @@
         "tags": [
           "Watch-Lists"
         ],
-        "description": "Update a watch-list by passing in its id and the data that needs to be updated.",
+        "description": "Update a watch-list by passing in its id and the data that needs to be updated. Requires authentication.",
         "parameters": [
           {
             "name": "id",
@@ -584,7 +584,7 @@
         "tags": [
           "Accounts"
         ],
-        "description": "Create a new account and add it to the database.",
+        "description": "Create a new account and add it to the database. Requires authentication.",
         "parameters": [
           {
             "name": "body",
@@ -624,7 +624,7 @@
         "tags": [
           "Accounts"
         ],
-        "description": "Update an account by passing in its githubId and the data that needs to be updated.",
+        "description": "Update an account by passing in its githubId and the data that needs to be updated. Requires authentication.",
         "parameters": [
           {
             "name": "githubId",
@@ -671,7 +671,7 @@
         "tags": [
           "Accounts"
         ],
-        "description": "Delete an account by passing in its githubId.",
+        "description": "Delete an account by passing in its githubId. Requires authentication.",
         "parameters": [
           {
             "name": "githubId",

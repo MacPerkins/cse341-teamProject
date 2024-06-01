@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const watchListController = require('../controllers/watch_lists.js');
+const watchListController = require('../controllers/watchListsController');
 const validation = require('../middleware/validate.js');
 const authenticate = require('../middleware/authenticate.js');
 
