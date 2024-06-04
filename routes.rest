@@ -1,16 +1,16 @@
 #MOVIE COLLECTION REQUESTS ----------------------------------------
 
-GET http://localhost:8000/movies/
+GET https://cse341-teamproject-txpy.onrender.com/movies/
 # Get All Movies in the collection
 
 ###
 
-GET http://localhost:8000/movies/664c1ac58e6b8788e2d588e0
+GET https://cse341-teamproject-txpy.onrender.com/movies/664c1ac58e6b8788e2d588e1
 # Get a single movie
 
 ###
 
-POST http://localhost:8000/movies HTTP/1.1
+POST https://cse341-teamproject-txpy.onrender.com/movies HTTP/1.1
 Content-Type: application/json
 
 {
@@ -29,7 +29,7 @@ Content-Type: application/json
 ###
 
 # PUT or Update Movies by ID
-PUT http://localhost:8000/movies/664c1ac58e6b8788e2d588e0 HTTP/1.1
+PUT https://cse341-teamproject-txpy.onrender.com/movies/664c1ac58e6b8788e2d588e0 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -48,6 +48,44 @@ Content-Type: application/json
 ###
 
 # DELETE Movies by ID
-DELETE http://localhost:8000/movies/663d30df6a910b7d1e111a63 HTTP/1.1
+DELETE https://cse341-teamproject-txpy.onrender.com/movies/663d30df6a910b7d1e111a63 HTTP/1.1
 
 #SHOW COLLECTION REQUESTS ----------------------------------------
+
+###
+
+# GET All Shows:
+GET https://cse341-teamproject-txpy.onrender.com/shows
+
+###
+
+# GET Show By ID:
+GET https://cse341-teamproject-txpy.onrender.com/shows/6652871df7447d017e4dfaf6
+
+
+
+# ACCOUNTS COLLECTION REQUESTS ----------------------------------------
+
+###
+
+# GET All Accounts:
+GET https://cse341-teamproject-txpy.onrender.com/accounts
+
+###
+
+# GET Account By ID:
+GET https://cse341-teamproject-txpy.onrender.com/accounts/
+
+
+
+# WATCH-LISTS COLLECTION REQUESTS ----------------------------------------
+
+###
+
+# GET All Watch-Lists:
+GET https://cse341-teamproject-txpy.onrender.com/watch-list
+
+###
+
+# GET Watch-List By ID:
+GET https://cse341-teamproject-txpy.onrender.com/watch-list/664c0876818e0fe059fa1d9b
